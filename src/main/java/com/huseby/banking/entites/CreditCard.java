@@ -19,10 +19,9 @@ public class CreditCard {
     private int balance;
 
     @OneToOne
-    @PrimaryKeyJoinColumn()
     private Pincode pincode;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn()
+    @JoinColumn(name = "bank_id")
     private Bank bank;
 }
